@@ -1,13 +1,12 @@
 :root{--blue:#3B82F6;--bg:#0b1020;--bg-alt:#0f152a;--fg:#e5e7eb;--muted:#a1a1aa;--card:rgba(255,255,255,.08);--glass-bd:rgba(255,255,255,.22)}
 *{box-sizing:border-box}
-html,body{margin:0;padding:0;background:linear-gradient(180deg,#0b1020,#0e1730 50%,#0b1020);color:var(--fg);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,"Noto Sans",sans-serif;}
+html,body{margin:0;padding:0;background:linear-gradient(180deg,#0b1020,#0e1730 50%,#0b1020);color:var(--fg);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,"Noto Sans",sans-serif;line-height:1.6;}
 a{color:var(--fg);text-decoration:none}
 
 .container{max-width:1120px;margin:0 auto;padding:0 20px}
 .narrow{max-width:860px}
 .center{text-align:center}
 .stack{display:flex;flex-direction:column}
-.gap-24{gap:24px}.gap-40{gap:40px}
 .mt-8{margin-top:8px}.mt-12{margin-top:12px}.mt-16{margin-top:16px}.mt-24{margin-top:24px}.mt-40{margin-top:40px}
 .muted{color:var(--muted)}
 
@@ -26,27 +25,33 @@ a{color:var(--fg);text-decoration:none}
 .hero p{margin:16px 0 0;max-width:720px;color:#d1d5db}
 .hero-cta{display:flex;gap:12px;margin-top:28px}
 
-.section{padding:72px 0}
+.section{padding:80px 0}
 .section.alt{background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.03))}
 .section h2{margin:0 0 20px}
-.section-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-end;flex-wrap:wrap}
+.section-block{display:flex;flex-direction:column;gap:32px;margin-top:64px}
+.section-block:first-child{margin-top:0}
+.section-head{display:flex;justify-content:space-between;gap:24px;align-items:flex-end;flex-wrap:wrap}
+.section-head .actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end}
+.section-head .actions .btn{min-width:140px}
 
-.grid{display:grid;gap:16px}
+.grid{display:grid;gap:24px}
 .grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
 .grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
 .grid.four{grid-template-columns:repeat(4,minmax(0,1fr))}
 @media (max-width:1024px){.grid.four{grid-template-columns:repeat(2,1fr)}.grid.three{grid-template-columns:repeat(2,1fr)}.grid.two{grid-template-columns:1fr}}
 @media (max-width:560px){.grid.four,.grid.three,.grid.two{grid-template-columns:1fr}}
+.gap-24{gap:24px}
+.gap-40{gap:40px}
 
 .card{border-radius:16px;padding:24px}
 .card-glass{border:1px solid var(--glass-bd);background:var(--card);box-shadow:0 8px 30px rgba(59,130,246,.12);backdrop-filter:blur(10px)}
 .placeholder{height:180px;border-radius:12px;background:linear-gradient(135deg,rgba(59,130,246,.2),rgba(167,139,250,.18))}
-.flow{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;counter-reset:st}
+.flow{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px;counter-reset:st}
 .flow li{list-style:none;padding:24px 16px;border-radius:12px;border:1px solid var(--glass-bd);background:var(--card);text-align:center;display:flex;flex-direction:column;align-items:center}
 @media (max-width:900px){.flow{grid-template-columns:repeat(3,1fr)} }
 @media (max-width:560px){.flow{grid-template-columns:repeat(2,1fr)} }
 
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:.7rem 1.1rem;border-radius:9999px;font-weight:600;transition:.25s}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:.85rem 1.4rem;border-radius:9999px;font-weight:600;font-size:.95rem;transition:.25s}
 .btn-glass{color:#fff;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.12);box-shadow:0 0 0 1px rgba(59,130,246,.35) inset,0 6px 30px rgba(59,130,246,.22);backdrop-filter:blur(12px)}
 .btn-glass:hover{background:rgba(255,255,255,.2);box-shadow:0 0 0 1px rgba(59,130,246,.55) inset,0 10px 36px rgba(99,102,241,.35);transform:translateY(-1px)}
 .btn-primary{color:#0b4dff;background:#ffffff;border-color:rgba(11,77,255,.25)}
@@ -95,6 +100,14 @@ a{color:var(--fg);text-decoration:none}
   .case-header{flex-direction:column;align-items:flex-start}
   .case-score{margin-top:12px}
   .stat-number{font-size:2rem}
+}
+
+@media (max-width:768px){
+  .section{padding:56px 0}
+  .section-block{margin-top:48px;gap:24px}
+  .section-head{align-items:flex-start}
+  .section-head .actions{justify-content:flex-start}
+  .section-head .actions .btn{width:100%;min-width:0}
 }
 
 
