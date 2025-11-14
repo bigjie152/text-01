@@ -110,5 +110,11 @@ a{color:var(--fg);text-decoration:none}
   .section-head .actions .btn{width:100%;min-width:0}
 }
 
+@media (max-width:640px){
+  .header-inner{flex-direction:column;align-items:flex-start;height:auto;padding:16px 0;gap:12px}
+  .nav{flex-wrap:wrap;gap:12px 8px;justify-content:flex-start}
+  .nav a{font-size:.95rem}
+}
+
 
 
